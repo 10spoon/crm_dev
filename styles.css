@@ -267,7 +267,7 @@ close-button {
     background-color: #f0f8ff;
     color: var(--primary-color);
     padding: 0.3rem 0.8rem;
-    border-radius: 20px;
+    border-radius: 5px; /* change radius 20px -> 5px */
     font-size: 0.9rem;
     margin-right: 0.5rem;
 }
