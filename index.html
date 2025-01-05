@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>써치클래스 원장님 서비스</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>써치클래스 원장님 서비스</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="login.html">로그아웃</a></li>
+                <li><a href="#academy-info">학원 정보 관리</a></li>
+                <li><a href="#lecture-list">강의 목록</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="login" style="display: none;">
+            <h2>로그인</h2>
+            <!-- 로그인 폼 -->
+            <form id="login-form">
+                <label for="username">아이디:</label>
+                <input type="text" id="username" name="username" required>
+                <br>
+                <label for="password">비밀번호:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <button type="submit">로그인</button>
+            </form>
+        </section>
+        <section id="academy-info">
+            <h2>대치열강학원</h2>
+            <h3>학원 정보 관리</h3> <!-- Changed to subtitle -->
+            <!-- 학원 정보 관리 폼 -->
+            <form id="academy-info-form">
+                <div class="form-group">
+                    <label for="academy-name">학원 이름</label>
+                    <input type="text" id="academy-name" name="academy-name" value="대치열강학원" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="academy-phone">전화번호</label>
+                    <input type="tel" id="academy-phone" name="academy-phone" value="02-555-9000" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="academy-address-basic">주소</label>
+                    <input type="text" id="academy-address-basic" name="academy-address-basic" value="서울 강남구 삼성로63길 17" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="academy-address-detail">상세 주소</label>
+                    <input type="text" id="academy-address-detail" name="academy-address-detail" value="6층 602호" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>학원 상태</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="academy-status-public" name="academy-status" value="public" checked required>
+                            <label for="academy-status-public">공개</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="academy-status-private" name="academy-status" value="private" required>
+                            <label for="academy-status-private">비공개</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <button type="button" id="additional-info-button">추가 정보 입력</button>
+                    <button type="submit">저장</button>
+                </div>
+            </form>
+        </section>
+        <section id="lecture-list">
+            <h2>강의 목록</h2>
+            <!-- 강의 목록 -->
+            <table id="lecture-table">
+                <thead>
+                    <tr>
+                        <th>강의명</th>
+                        <th>강사명</th>
+                        <th>강의 일정</th>
+                        <th>대상</th>
+                        <th>과목</th>
+                        <th>강의 상태</th>
+                        <th>노출 상태</th>
+                        <th>수강 상태</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 강의 항목들 -->
+                    <tr>
+                        <td><a href="#" class="edit-lecture" data-lecture="개정 한국사 개념 10회 완성 (토)">개정 한국사 개념 10회 완성 (토)</a></td>
+                        <td>김슬기</td>
+                        <td>토 14:00 - 17:00</td>
+                        <td>
+                            <span class="text-bubble">중1</span>
+                            <span class="text-bubble">중2</span>
+                            <span class="text-bubble">중3</span>
+                        </td>
+                        <td>사회</td>
+                        <td>진행중</td>
+                        <td>공개</td>
+                        <td>모집중</td>
+                    </tr>
+                    <tr>
+                        <td>영어 회화</td>
+                        <td>이선생님</td>
+                        <td>화, 목 14:00 - 16:00</td>
+                        <td>
+                            <span class="text-bubble">고등학생</span>
+                        </td>
+                        <td>영어</td>
+                        <td>종강</td>
+                        <td>비공개</td>
+                        <td>마감</td>
+                    </tr>
+                    <tr>
+                        <td>과학 실험</td>
+                        <td>박선생님</td>
+                        <td>월, 수 13:00 - 15:00</td>
+                        <td>
+                            <span class="text-bubble">초등학생</span>
+                        </td>
+                        <td>과학</td>
+                        <td>진행중</td>
+                        <td>공개</td>
+                        <td>모집중</td>
+                    </tr>
+                    <tr>
+                        <td>한국사</td>
+                        <td>최선생님</td>
+                        <td>화, 목 10:00 - 12:00</td>
+                        <td>
+                            <span class="text-bubble">중학생</span>
+                        </td>
+                        <td>역사</td>
+                        <td>진행중</td>
+                        <td>공개</td>
+                        <td>모집중</td>
+                    </tr>
+                    <tr>
+                        <td>프로그래밍 기초</td>
+                        <td>이선생님</td>
+                        <td>금 16:00 - 18:00</td>
+                        <td>
+                            <span class="text-bubble">고등학생</span>
+                        </td>
+                        <td>컴퓨터</td>
+                        <td>진행중</td>
+                        <td>공개</td>
+                        <td>모집중</td>
+                    </tr>
+                    <tr>
+                        <td>미술</td>
+                        <td>김선생님</td>
+                        <td>토 10:00 - 12:00</td>
+                        <td>
+                            <span class="text-bubble">초등학생</span>
+                        </td>
+                        <td>미술</td>
+                        <td>진행중</td>
+                        <td>공개</td>
+                        <td>모집중</td>
+                    </tr>
+                    <tr>
+                        <td>음악</td>
+                        <td>박선생님</td>
+                        <td>수 14:00 - 16:00</td>
+                        <td>
+                            <span class="text-bubble">중학생</span>
+                        </td>
+                        <td>음악</td>
+                        <td>진행중</td>
+                        <td>공개</td>
+                        <td>모집중</td>
+                    </tr>
+                    <tr>
+                        <td>체육</td>
+                        <td>최선생님</td>
+                        <td>월, 금 10:00 - 12:00</td>
+                        <td>
+                            <span class="text-bubble">고등학생</span>
+                        </td>
+                        <td>체육</td>
+                        <td>진행중</td>
+                        <td>공개</td>
+                        <td>모집중</td>
+                    </tr>
+                    <tr>
+                        <td>화학</td>
+                        <td>이선생님</td>
+                        <td>화, 목 16:00 - 18:00</td>
+                        <td>
+                            <span class="text-bubble">고등학생</span>
+                        </td>
+                        <td>화학</td>
+                        <td>진행중</td>
+                        <td>공개</td>
+                        <td>모집중</td>
+                    </tr>
+                    <tr>
+                        <td>물리</td>
+                        <td>김선생님</td>
+                        <td>수, 금 14:00 - 16:00</td>
+                        <td>
+                            <span class="text-bubble">고등학생</span>
+                        </td>
+                        <td>물리</td>
+                        <td>진행중</td>
+                        <td>공개</td>
+                        <td>모집중</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <!-- Modal -->
+    <div id="additional-info-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>추가 정보</h2>
+            <form id="additional-info-form">
+                <label for="academy-photo">대표 사진</label>
+                <input type="file" id="academy-photo" name="academy-photo" accept="image/*">
+                <img id="academy-photo-preview" src="#" alt="대표 사진 미리보기" style="display: none; max-width: 100%; height: auto; margin-top: 10px;">
+                <br>
+                <label for="academy-phone2">전화번호2</label>
+                <input type="tel" id="academy-phone2" name="academy-phone2">
+                <br>
+                <label for="academy-sms-phone">문자용 전화번호</label>
+                <input type="tel" id="academy-sms-phone" name="academy-sms-phone">
+                <br>
+                <label for="academy-email">이메일 주소</label>
+                <input type="email" id="academy-email" name="academy-email">
+                <br>
+                <label for="academy-website1">홈페이지 주소1</label>
+                <input type="url" id="academy-website1" name="academy-website1">
+                <br>
+                <label for="academy-website2">홈페이지 주소2</label>
+                <input type="url" id="academy-website2" name="academy-website2">
+                <br>
+                <label for="academy-hashtags">해시태그</label>
+                <input type="text" id="academy-hashtags" name="academy-hashtags">
+                <br>
+                <label for="academy-description">학원 설명</label>
+                <textarea id="academy-description" name="academy-description"></textarea>
+                <br>
+                <button type="submit">저장</button>
+            </form>
+        </div>
+    </div>
+    <!-- Lecture Info Modal -->
+    <div id="lecture-info-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>강의 정보 수정</h2>
+            <form id="lecture-info-form">
+                <label for="lecture-name">강의명</label>
+                <input type="text" id="lecture-name" name="lecture-name" value="개정 한국사 개념 10회 완성 (토)" required>
+                <br>
+                <label for="lecture-instructor">강사명</label>
+                <input type="text" id="lecture-instructor" name="lecture-instructor" value="김슬기" required>
+                <br>
+                <label for="lecture-schedule">강의 일정</label>
+                <div class="schedule-input-container">
+                    <div class="schedule-input-group">
+                        <select id="modal-lecture-day" name="lecture-day" required>
+                            <option value="" disabled>요일</option>
+                            <option value="월">월요일</option>
+                            <option value="화">화요일</option>
+                            <option value="수">수요일</option>
+                            <option value="목">목요일</option>
+                            <option value="금">금요일</option>
+                            <option value="토" selected>토요일</option>
+                            <option value="일">일요일</option>
+                        </select>
+                        <div class="time-input-group">
+                            <input type="time" id="modal-lecture-start-time" name="lecture-start-time" value="14:00" required>
+                            <span class="schedule-dash">-</span>
+                            <input type="time" id="modal-lecture-end-time" name="lecture-end-time" value="17:00" required>
+                        </div>
+                        <button type="button" class="add-schedule-button" title="일정 추가">+</button>
+                    </div>
+                    <div class="schedule-input-group">
+                        <select id="modal-lecture-day" name="lecture-day" required>
+                            <option value="" disabled selected>요일</option>
+                            <option value="월">월요일</option>
+                            <option value="화">화요일</option>
+                            <option value="수">수요일</option>
+                            <option value="목">목요일</option>
+                            <option value="금">금요일</option>
+                            <option value="토">토요일</option>
+                            <option value="일">일요일</option>
+                        </select>
+                        <div class="time-input-group">
+                            <input type="time" id="modal-lecture-start-time" name="lecture-start-time" required>
+                            <span class="schedule-dash">-</span>
+                            <input type="time" id="modal-lecture-end-time" name="lecture-end-time" required>
+                        </div>
+                        <button type="button" class="add-schedule-button" title="일정 추가">+</button>
+                        <button type="button" class="delete-schedule-button" title="일정 제거">-</button>
+                    </div>
+                </div>
+                <br>
+                <label for="lecture-target">강의 대상</label>
+                <div class="target-checkbox-group">
+                    <div class="target-row">
+                        <label><input type="checkbox" name="lecture-target" value="중1" checked>중1</label>
+                        <label><input type="checkbox" name="lecture-target" value="중2" checked>중2</label>
+                        <label><input type="checkbox" name="lecture-target" value="중3" checked>중3</label>
+                        <label><input type="checkbox" name="lecture-target" value="고1">고1</label>
+                        <label><input type="checkbox" name="lecture-target" value="고2">고2</label>
+                        <label><input type="checkbox" name="lecture-target" value="고3">고3</label>
+                        <label><input type="checkbox" name="lecture-target" value="N수">N수</label>
+                    </div>
+                    <div class="target-row">
+                        <label><input type="checkbox" name="lecture-target" value="초1">초1</label>
+                        <label><input type="checkbox" name="lecture-target" value="초2">초2</label>
+                        <label><input type="checkbox" name="lecture-target" value="초3">초3</label>
+                        <label><input type="checkbox" name="lecture-target" value="초4">초4</label>
+                        <label><input type="checkbox" name="lecture-target" value="초5">초5</label>
+                        <label><input type="checkbox" name="lecture-target" value="초6">초6</label>
+                    </div>
+                    <div class="target-row">
+                        <label><input type="checkbox" name="lecture-target" value="만3세">만3세</label>
+                        <label><input type="checkbox" name="lecture-target" value="만4세">만4세</label>
+                        <label><input type="checkbox" name="lecture-target" value="만5세">만5세</label>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group-horizontal">
+                    <label for="lecture-start-date">개강일</label>
+                    <input type="date" id="lecture-start-date" name="lecture-start-date" required>
+                    <label for="lecture-end-date">종강일</label>
+                    <input type="date" id="lecture-end-date" name="lecture-end-date" required>
+                </div>
+                <br>
+                <label for="lecture-subject">과목</label>
+                <input type="text" id="lecture-subject" name="lecture-subject" value="사회" required>
+                <br>
+                <label for="lecture-type">강의 형태</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="lecture-type-general" name="lecture-type" value="일반" checked required>
+                        <label for="lecture-type-general">일반</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="lecture-type-special" name="lecture-type" value="특강" required>
+                        <label for="lecture-type-special">특강</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="lecture-type-other" name="lecture-type" value="기타" required>
+                        <label for="lecture-type-other">기타</label>
+                    </div>
+                </div>
+                <br>
+                <label for="lecture-visibility">노출 상태</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="lecture-visibility-public" name="lecture-visibility" value="공개" checked required>
+                        <label for="lecture-visibility-public">공개</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="lecture-visibility-private" name="lecture-visibility" value="비공개" required>
+                        <label for="lecture-visibility-private">비공개</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="lecture-visibility-hidden" name="lecture-visibility" value="비노출" required>
+                        <label for="lecture-visibility-hidden">Blind</label>
+                    </div>
+                </div>
+                <br>
+                <label for="lecture-enrollment">수강 상태</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="lecture-enrollment-open" name="lecture-enrollment" value="모집중" checked required>
+                        <label for="lecture-enrollment-open">모집중</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="lecture-enrollment-closed" name="lecture-enrollment" value="마감" required>
+                        <label for="lecture-enrollment-closed">마감</label>
+                    </div>
+                </div>
+                <br>
+                <label for="lecture-description">상세 설명</label>
+                <textarea id="lecture-description" name="lecture-description"></textarea>
+                <br>
+                <label for="lecture-photo">강의 대표 사진</label>
+                <input type="file" id="lecture-photo" name="lecture-photo">
+                <br>
+                <button type="submit">저장</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 써치클래스 by 91도<br />
+        본 서비스는 베타 테스트 중입니다. 회원가입, 문의 및 건의는 help@91do.co.kr로 메일 바랍니다.
+        </p>
+    </footer>
+</body>
+</html>
