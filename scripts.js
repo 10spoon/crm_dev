@@ -54,4 +54,15 @@ document.addEventListener('DOMContentLoaded', () => {
             academyPhotoPreview.style.display = 'none';
         }
     });
+
+    const toggleButton = document.getElementById('toggle-academy-info-form');
+    const form = document.getElementById('academy-info-form');
+
+    toggleButton.addEventListener('click', () => {
+        if (form.style.display === 'none') {
+            form.style.display = 'block';
+        } else {
+            form.style.display = 'none';
+        }
+    });
 });
