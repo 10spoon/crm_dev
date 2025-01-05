@@ -266,7 +266,7 @@ close-button {
 .text-bubble {
     background-color: #f0f8ff;
     color: var(--primary-color);
-    padding: 0.3rem 0.8rem;
+    padding: 0.3rem;
     border-radius: 5px; /* change radius 20px -> 5px */
     font-size: 0.9rem;
     margin-right: 0.5rem;
@@ -283,6 +283,7 @@ table thead th:last-child {
 #lecture-table tbody tr {
     cursor: pointer;
     transition: background-color 0.3s;
+    text-align: center; /* Center the elements */
 }
 
 #lecture-table tbody tr:hover {
